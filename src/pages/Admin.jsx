@@ -3,6 +3,8 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "../styles/pages/Admin.css";
 
+const API_URL = process.env.REACT_APP_API_URL;
+
 const Admin = () => {
   const [quotes, setQuotes] = useState([]);
   const [templates, setTemplates] = useState([]);
@@ -21,9 +23,9 @@ const Admin = () => {
   const fetchData = async () => {
     try {
       const [quotesRes, templatesRes, commentsRes] = await Promise.all([
-        axios.get("/api/quotes"),
-        axios.get("/api/templates"),
-        axios.get("/api/comments"),
+        axios.get(`${API_URL}/quotes`),
+        axios.get(`${API_URL}/templates`),
+        axios.get(`${API_URL}/comments`),
       ]);
       setQuotes(quotesRes.data);
       setTemplates(templatesRes.data);
@@ -33,36 +35,14 @@ const Admin = () => {
     }
   };
 
-  const deleteQuote = async (id) => {
+  const deleteItem = async (endpoint, id) => {
     try {
-      await axios.delete(`/api/quotes/${id}`, {
+      await axios.delete(`${API_URL}/${endpoint}/${id}`, {
         headers: { Authorization: localStorage.getItem("adminPassword") || "" },
       });
       fetchData();
     } catch (err) {
-      console.error("Erreur suppression devis:", err);
-    }
-  };
-
-  const deleteComment = async (id) => {
-    try {
-      await axios.delete(`/api/comments/${id}`, {
-        headers: { Authorization: localStorage.getItem("adminPassword") || "" },
-      });
-      fetchData();
-    } catch (err) {
-      console.error("Erreur suppression commentaire:", err);
-    }
-  };
-
-  const deleteTemplate = async (id) => {
-    try {
-      await axios.delete(`/api/templates/${id}`, {
-        headers: { Authorization: localStorage.getItem("adminPassword") || "" },
-      });
-      fetchData();
-    } catch (err) {
-      console.error("Erreur suppression template:", err);
+      console.error(`Erreur suppression ${endpoint}:`, err);
     }
   };
 
@@ -72,7 +52,7 @@ const Admin = () => {
       return;
     }
     try {
-      await axios.post("/api/templates", newTemplate, {
+      await axios.post(`${API_URL}/templates`, newTemplate, {
         headers: { Authorization: localStorage.getItem("adminPassword") || "" },
       });
       setNewTemplate({ name: "", price: "", description: "" });
@@ -106,7 +86,7 @@ const Admin = () => {
             </span>
             <button
               className="delete-button"
-              onClick={() => deleteQuote(quote.id)}
+              onClick={() => deleteItem("quotes", quote.id)}
             >
               Supprimer
             </button>
@@ -125,7 +105,7 @@ const Admin = () => {
             </span>
             <button
               className="delete-button"
-              onClick={() => deleteTemplate(template.id)}
+              onClick={() => deleteItem("templates", template.id)}
             >
               Supprimer
             </button>
@@ -176,7 +156,7 @@ const Admin = () => {
             </div>
             <button
               className="delete-button"
-              onClick={() => deleteComment(comment.id)}
+              onClick={() => deleteItem("comments", comment.id)}
             >
               Supprimer
             </button>

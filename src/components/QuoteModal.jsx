@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "../styles/components/QuoteModal.css";
 
+const API_URL = process.env.REACT_APP_API_URL;
+
 const QuoteModal = ({
   isOpen,
   onClose,
@@ -38,10 +40,13 @@ const QuoteModal = ({
     setLoading(true);
 
     try {
-      const selectedTemplate = templates.find((t) => t.name === form.service);
-      const price = selectedTemplate ? selectedTemplate.price : "N/A";
+      const selectedTemplate =
+        templates.find(
+          (t) => t.name === form.service || t.title === form.service
+        ) || {};
+      const price = selectedTemplate.price || "N/A";
 
-      await axios.post("/api/quotes", {
+      await axios.post(`${API_URL}/quotes`, {
         name: form.name,
         email: form.email,
         service: form.service,
@@ -91,8 +96,11 @@ const QuoteModal = ({
             >
               <option value="">Choisir un service</option>
               {templates.map((template) => (
-                <option key={template.id} value={template.name}>
-                  {template.name}
+                <option
+                  key={template.id}
+                  value={template.name || template.title}
+                >
+                  {template.name || template.title}
                 </option>
               ))}
             </select>

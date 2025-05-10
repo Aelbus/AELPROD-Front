@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "../styles/pages/home.css";
 
+const API_URL = process.env.REACT_APP_API_URL;
+
 const Home = () => {
   const [reviews, setReviews] = useState([]);
   const [newReview, setNewReview] = useState({
@@ -16,7 +18,7 @@ const Home = () => {
 
   const fetchReviews = async () => {
     try {
-      const res = await axios.get("/api/comments");
+      const res = await axios.get(`${API_URL}/comments`);
       setReviews(res.data);
     } catch (err) {
       console.error("Erreur chargement avis:", err);
@@ -30,7 +32,7 @@ const Home = () => {
       return;
     }
     try {
-      await axios.post("/api/comments", newReview);
+      await axios.post(`${API_URL}/comments`, newReview);
       fetchReviews();
       setNewReview({ name: "", text: "", rating: 0 });
     } catch (err) {
@@ -49,7 +51,7 @@ const Home = () => {
             acquérir les compétences nécessaires dans ce domaine. Mon parcours
             m'a permis de maîtriser les langages HTML, CSS et JavaScript, ainsi
             que les frameworks tels que Bootstrap, pour ensuite basculer vers le
-            FIULLSTACK. J'ai également une solide expérience dans la création
+            FULLSTACK. J'ai également une solide expérience dans la création
             d'interfaces utilisateur attrayantes et fonctionnelles. Toujours à
             l'affût des dernières tendances en matière de design et de
             développement web, je suis prêt à relever de nouveaux défis et à

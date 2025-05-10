@@ -1,21 +1,28 @@
-# Ignorer node_modules
+# Node modules
 node_modules/
 
-# Ignorer build (si utilisé)
+# Build folders
 build/
 dist/
 
-# Ignorer fichiers sensibles
+# Sensitive env files
 .env
+.env.local
+.env.production
+.env.development
 
-# Ignorer logs
+# Log files
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# Ignorer fichiers système
+# System files
 .DS_Store
 Thumbs.db
 
-# Ignorer dossier Sass complet
+# Sass sources (tu veux ignorer tout src/sass)
 src/sass/
+
+# Editor folders
+.vscode/
+.idea/

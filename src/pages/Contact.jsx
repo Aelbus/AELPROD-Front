@@ -5,6 +5,7 @@ import "../styles/pages/Contact.css";
 export default function ContactForm() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [status, setStatus] = useState("");
+  const API_URL = process.env.REACT_APP_API_URL;
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -13,10 +14,11 @@ export default function ContactForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:5000/api/contact", form);
+      await axios.post(`${API_URL}/contact`, form);
       setStatus("Message envoyé avec succès !");
       setForm({ name: "", email: "", message: "" });
     } catch (err) {
+      console.error("Erreur envoi contact:", err);
       setStatus("Erreur lors de l’envoi.");
     }
   };

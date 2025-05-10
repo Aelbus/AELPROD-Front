@@ -3,6 +3,8 @@ import axios from "axios";
 import "../styles/pages/template.css";
 import QuoteModal from "../components/QuoteModal";
 
+const API_URL = process.env.REACT_APP_API_URL;
+
 const Templates = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedService, setSelectedService] = useState("");
@@ -15,7 +17,7 @@ const Templates = () => {
 
   const fetchTemplates = async () => {
     try {
-      const res = await axios.get("/api/templates");
+      const res = await axios.get(`${API_URL}/templates`);
       setOffers(res.data);
     } catch (err) {
       console.error("Erreur lors du chargement des templates :", err);
@@ -29,7 +31,7 @@ const Templates = () => {
 
   const deleteTemplate = async (id) => {
     try {
-      await axios.delete(`/api/templates/${id}`, {
+      await axios.delete(`${API_URL}/templates/${id}`, {
         headers: { Authorization: localStorage.getItem("adminPassword") || "" },
       });
       fetchTemplates();

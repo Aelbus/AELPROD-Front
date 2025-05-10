@@ -3,6 +3,8 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "../styles/pages/login.css";
 
+const API_URL = process.env.REACT_APP_API_URL;
+
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -12,7 +14,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("/api/login", { email, password });
+      const res = await axios.post(`${API_URL}/login`, { email, password });
       if (res.data.success) {
         localStorage.setItem("isAdmin", "true");
         localStorage.setItem("adminPassword", password);
@@ -35,12 +37,14 @@ const Login = () => {
           placeholder="Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
+          required
         />
         <input
           type="password"
           placeholder="Mot de passe"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
+          required
         />
         <button type="submit">Se connecter</button>
       </form>
