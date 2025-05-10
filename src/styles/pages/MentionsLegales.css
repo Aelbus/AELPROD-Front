@@ -1,0 +1,45 @@
+.mentions-container {
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  font-family: "Roboto", sans-serif;
+  line-height: 1.6;
+}
+.mentions-container h1 {
+  font-family: "Fjalla One", sans-serif;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+.mentions-container p {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+.mentions-container p strong {
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+}
+@media (max-width: 768px) {
+  .mentions-container {
+    padding: 1rem;
+  }
+  .mentions-container h1 {
+    font-size: 1.5rem;
+  }
+  .mentions-container p {
+    font-size: 0.95rem;
+  }
+}
+@media (min-width: 2560px) {
+  .mentions-container {
+    max-width: 1200px;
+  }
+  .mentions-container h1 {
+    font-size: 2.5rem;
+  }
+  .mentions-container p {
+    font-size: 1.2rem;
+  }
+}
+
+/*# sourceMappingURL=MentionsLegales.css.map */

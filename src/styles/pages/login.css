@@ -1,0 +1,56 @@
+.login-container {
+  padding: 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.login-container h1 {
+  font-family: "Fjalla One", sans-serif;
+  margin-bottom: 1rem;
+}
+.login-container .login-form {
+  width: 300px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+}
+.login-container .login-form input {
+  padding: 0.5rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-family: "Roboto", sans-serif;
+}
+.login-container .login-form button {
+  width: 100px;
+  padding: 0.5rem;
+  background: #333;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  font-family: "Fjalla One", sans-serif;
+  transition: background 0.3s;
+}
+.login-container .login-form button:hover {
+  background: #555;
+}
+.login-container .login-form button:disabled {
+  background: #999;
+  cursor: not-allowed;
+}
+.login-container .login-message {
+  margin-top: 1rem;
+  font-weight: bold;
+}
+.login-container .login-message.success {
+  color: green;
+}
+.login-container .login-message.error {
+  color: red;
+}
+
+/*# sourceMappingURL=login.css.map */

@@ -1,0 +1,28 @@
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  font-family: "Fjalla One", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  overflow-x: hidden;
+  background-color: rgb(230, 229, 222);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  padding-top: 60px;
+}
+
+/*# sourceMappingURL=index.css.map */

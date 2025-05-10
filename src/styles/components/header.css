@@ -1,0 +1,97 @@
+.header {
+  background: #333;
+  color: #fff;
+  padding: 0.5rem 1rem;
+}
+.header .header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+.header .header-left {
+  display: flex;
+  align-items: center;
+}
+.header .header-left .logo {
+  height: 40px;
+  margin-right: 0.5rem;
+  position: absolute;
+  left: -20px;
+  top: -35px;
+  height: 150px;
+  padding: 8px 10px 0 5px;
+  margin-right: 10px;
+  background-color: rgb(255, 255, 255);
+  border: 6px solid #333;
+  border-radius: 0 0 50% 0;
+}
+.header .header-left .header-title {
+  font-family: "Fjalla One", sans-serif;
+  font-size: 1.5rem;
+}
+.header .header-right {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.header .burger {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  margin-left: 1rem;
+}
+.header .nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.header .nav ul li {
+  margin-left: 1rem;
+}
+.header .nav ul li .nav-link,
+.header .nav ul li .logout-btn {
+  color: #fff;
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.header .nav ul li .nav-link.active-link,
+.header .nav ul li .logout-btn.active-link {
+  border-bottom: 2px solid #fff;
+}
+.header .nav ul li .nav-link:hover,
+.header .nav ul li .logout-btn:hover {
+  opacity: 0.7;
+}
+@media (max-width: 768px) {
+  .header .burger {
+    display: block;
+  }
+  .header .nav {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: #333;
+    width: 200px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+  }
+  .header .nav.open {
+    max-height: 300px;
+  }
+  .header .nav ul {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+  }
+  .header .nav ul li {
+    margin: 0.5rem 0;
+  }
+}
+
+/*# sourceMappingURL=header.css.map */

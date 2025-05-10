@@ -1,23 +1,21 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+# Ignorer node_modules
+node_modules/
 
-# dependencies
-/node_modules
-/.pnp
-.pnp.js
+# Ignorer build (si utilisé)
+build/
+dist/
 
-# testing
-/coverage
+# Ignorer fichiers sensibles
+.env
 
-# production
-/build
-
-# misc
-.DS_Store
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
-
+# Ignorer logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# Ignorer fichiers système
+.DS_Store
+Thumbs.db
+
+# Ignorer dossier Sass complet
+src/sass/

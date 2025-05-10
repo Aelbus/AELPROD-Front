@@ -1,0 +1,83 @@
+.templates-page {
+  padding: 2rem;
+  text-align: center;
+}
+.templates-page h1 {
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+.templates-page .offers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+}
+@media (min-width: 1200px) {
+  .templates-page .offers-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+.templates-page .offers-grid .offer-card {
+  position: relative;
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+.templates-page .offers-grid .offer-card:hover {
+  transform: translateY(-2px);
+}
+.templates-page .offers-grid .offer-card .delete-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: transparent;
+  border: none;
+  color: red;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+.templates-page .offers-grid .offer-card .delete-btn:hover {
+  color: darkred;
+}
+.templates-page .offers-grid .offer-card h2 {
+  margin-bottom: 0.5rem;
+  font-size: 22px;
+  font-family: "Roboto", sans-serif;
+}
+.templates-page .offers-grid .offer-card p {
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+.templates-page .offers-grid .offer-card .price {
+  font-weight: bold;
+  color: #ff9100;
+  margin-bottom: 1rem;
+  font-size: 22px;
+  font-family: "Edu QLD Beginner", cursive;
+  font-weight: 700;
+}
+.templates-page .offers-grid .offer-card .contact-btn {
+  margin-top: auto;
+  padding: 0.5rem 1rem;
+  background: #007bff;
+  color: #fff;
+  border-radius: 4px;
+  width: 150px;
+  text-decoration: none;
+  font-family: "Fjalla One", sans-serif;
+  transition: background 0.3s ease;
+}
+.templates-page .offers-grid .offer-card .contact-btn:hover {
+  background: #0056b3;
+}
+
+/*# sourceMappingURL=template.css.map */

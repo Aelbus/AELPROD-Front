@@ -1,0 +1,117 @@
+.home-page {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 2rem;
+  gap: 2rem;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.home-page .left-panel,
+.home-page .right-panel {
+  flex: 1 1 48%;
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-sizing: border-box;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+.home-page .left-panel h2 {
+  font-family: "Fjalla One", sans-serif;
+  font-size: 22px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+.home-page .left-panel p {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+}
+.home-page .review-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 15px;
+}
+.home-page .review-form .form-header input,
+.home-page .review-form .form-content textarea {
+  width: 100%;
+}
+.home-page .review-form .form-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.home-page .review-form .form-footer .rating {
+  display: flex;
+  gap: 5px;
+  flex-wrap: nowrap;
+}
+.home-page .review-form .form-footer .rating .star {
+  cursor: pointer;
+  font-size: 35px;
+  color: #ccc;
+}
+.home-page .review-form .form-footer .rating .star.selected {
+  color: gold;
+}
+.home-page .review-form .form-footer button {
+  padding: 6px 20px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-family: "Roboto", sans-serif;
+}
+.home-page .review-form .form-footer button:hover {
+  background: #0056b3;
+}
+.home-page .reviews {
+  margin-top: 1.5rem;
+}
+.home-page .reviews h3 {
+  font-family: "Fjalla One", sans-serif;
+  margin-bottom: 15px;
+}
+.home-page .reviews .review {
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 0.5rem;
+  font-family: "Roboto", sans-serif;
+}
+.home-page .reviews .review p {
+  margin-bottom: 5px;
+}
+.home-page .reviews .review .rating {
+  color: gold;
+  font-size: 20px;
+}
+@media (max-width: 1024px) {
+  .home-page .left-panel,
+  .home-page .right-panel {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+}
+@media (max-width: 600px) {
+  .home-page {
+    padding: 1rem;
+  }
+  .home-page .left-panel,
+  .home-page .right-panel {
+    padding: 1rem;
+  }
+  .home-page .form-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .home-page .form-footer button {
+    margin-top: 10px;
+    width: 100%;
+  }
+}
+
+/*# sourceMappingURL=home.css.map */

@@ -1,0 +1,107 @@
+.footer {
+  background: #333;
+  color: #fff;
+  padding: 1rem 2rem;
+  font-family: "Roboto", sans-serif;
+}
+.footer .footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 2rem;
+}
+.footer .footer-section {
+  flex: 1 1 200px;
+  min-width: 150px;
+}
+.footer .footer-section h3,
+.footer .footer-section h4 {
+  font-family: "Fjalla One", sans-serif;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+.footer .footer-section p,
+.footer .footer-section a,
+.footer .footer-section li {
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+.footer .footer-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.footer .footer-section ul li {
+  margin-bottom: 0.3rem;
+}
+.footer .footer-section ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+.footer .footer-section ul li a:hover {
+  text-decoration: underline;
+}
+.footer .footer-section-group {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+.footer .footer-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.footer .footer-logo svg,
+.footer .footer-logo img {
+  width: 120px;
+  height: auto;
+  filter: invert(1) brightness(2);
+}
+.footer .footer-bottom {
+  flex: 1 1 100%;
+  text-align: center;
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+}
+@media (max-width: 768px) {
+  .footer .footer-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  .footer .footer-section-group {
+    flex-direction: row;
+    justify-content: center;
+    gap: 1rem;
+  }
+  .footer .footer-section {
+    text-align: center;
+    flex: 1 1 100px;
+  }
+  .footer .footer-section h3,
+  .footer .footer-section h4 {
+    font-size: 0.9rem;
+  }
+  .footer .footer-section p,
+  .footer .footer-section a,
+  .footer .footer-section li {
+    font-size: 0.8rem;
+  }
+  .footer .footer-logo svg,
+  .footer .footer-logo img {
+    width: 130px;
+  }
+}
+@media (max-width: 480px) {
+  .footer .footer-section-group {
+    gap: 0.5rem;
+  }
+  .footer .footer-logo svg,
+  .footer .footer-logo img {
+    width: 140px;
+  }
+}
+
+/*# sourceMappingURL=footer.css.map */
